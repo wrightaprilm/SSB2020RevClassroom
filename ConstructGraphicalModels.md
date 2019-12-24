@@ -188,7 +188,9 @@ b[6].probability()
 >
 > (3) Print out the current values for mean and sd. What are they? Now, print out the likelihoods for each of the n Normal distributions. Do these likelihoods make sense given the clamped values, and the current mean and sd? (HINT: values further from the mean should have lower likelihood, especially if the standard deviation is small.)
 
-NORMAL MODEL IMAGE
+<p align="center">
+  <img src="https://github.com/wrightaprilm/SSB2020RevClassroom/blob/master/images/NormalModel.jpg"/>
+</p>
 
 ## Performing Bayesian Inference
 

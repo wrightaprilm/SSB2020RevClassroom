@@ -89,6 +89,18 @@ for (i in 1:10){
 }
 ```
 
+---
+
+### _ASIDE: Binomial Distribution_
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/penny.png"/>
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/penny.png"/>
+</p>
+
+The Binomial distribution is a simple extension of the Bernoulli.
+---
+
 > _Practice Exercise_
 >
 > In the code block below, repeat what we did above for the Bernoulli distribution, but this time construct a stochastic node whose values are binomially distributed. Remember that the binomial distribution requires two parameters. If you need some help, you can consult the list of RevBayes commands and distributions.

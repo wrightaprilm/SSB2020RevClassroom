@@ -96,9 +96,11 @@ for (i in 1:10){
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/penny.png"/>
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/penny.png"/>
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/penny.png"/>
 </p>
 
-The Binomial distribution is a simple extension of the Bernoulli.
+The Binomial distribution is a simple extension of the Bernoulli. However, instead of thinking about a single trial with probability of success _p_, we will now think about _n_ trials and we will keep track of the number of successes, _k_. Therefore, while the Bernoulli distribution only had one parameter, _p_, the Binomial distribution has two, _n_ and _p_.
+
 ---
 
 > _Practice Exercise_

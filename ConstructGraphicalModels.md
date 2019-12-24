@@ -115,7 +115,6 @@ The Binomial distribution is a simple extension of the Bernoulli. However, inste
 > 
 > `# Write Rev code to create a random variable called R, assign it a binomial distribution, and draw 10 values from it.`
 
-
 ### Clamped Stochastic Nodes
 
 In order to be able to learn about the unknown values of parameters in our models, we must have a way to include observed data. In the context of graphical models, this is known as clamping. More specifically, we can clamp observations to stochastic nodes (think of the data as the observed values of a random variable or set of random variables).
@@ -136,37 +135,38 @@ print("Clamped value of R is " + R + ".")
 
 Now that we've got our four basic building blocks in place (constant, deterministic, stochastic, and clamped stochastic nodes), we can begin building more interesting models.
 
-If we want to actually learn something about the probability of success, we need to record more than one observation. But since an individual Bernoulli r.v. has only a single outcome, we need to think about recording the outcomes of a series of Bernoulli r.v.s with a shared _p_. We also can't specify the exact value of _p_ - otherwise there would be nothing to learn, because we would already know the value with certainty! Instead, we'll assign a prior probability distribution to _p_, which in this case will be a Beta(1,1).
-
-```
-alpha <- 1
-beta <- 1
-p ~ dnBeta(alpha,beta)
-obs <- [1,0,0,1,0,1]
-for (i in 1:6){
-    obsNodes[i] ~ dnBernoulli(p)
-    obsNodes[i].clamp(obs[i])
-}
-```
-
-We can also write out this same model more simply as a single binomial distribution.
+If we've clamped data to a stochastic node with a Binomial distribution, we can learn something about the probability of success, _p_, that produced those outcomes. However, in this case, we don't want to specify the exact value of _p_ as a constant node - if we did, there would be nothing to learn! Instead, we'll assign a prior probability distribution to _p_, which in this case will be a Beta(1,1).
 
 ```
 clear()
 alpha <- 1
 beta <- 1
 p ~ dnBeta(alpha,beta)
-n <- 6
-k ~ dnBinomial(n,p)
-k.clamp(3)
+n <- 10
+R ~ dnBinomial(n,p)
+R.clamp(4)
 ```
 
 Also note that you can print out the likelihood (i.e., the probability density of the current parameter value) for a given value of a model parameter, conditioned on the current states of other model parameters.
 
 ```
-p.probability()
-p.lnProbability()
+R.probability()
+R.lnProbability()
 ```
+
+### Plates
+
+<DESCRIPTION OF PLATES HERE>
+
+> _Practice Exercise_
+>
+> Use the skills we practiced above to construct a model of Normal distribution, which has two parameters: mean and sd (standard deviation).
+> 
+> (1) Start by drawing n values from a Normal distribution with a particular mean and sd using: rnorm(n,mean,sd) and saving them in a variable called data.
+>
+> (2) Now, create a set of Normal distributions with shared, but unknown, mean and sd. For now, use a uniform distribution - dnUnif(min,max) - to specify your prior distributions for the mean and standard deviation. Be sure to create each Normal distribution and clamp a value using a for loop (plate).
+>
+> (3) Print out the current values for mean and sd. What are they? Now, print out their probability densities for your Normal distributions. Do these make sense given the data?
 
 ## Performing Bayesian Inference
 

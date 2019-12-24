@@ -113,7 +113,7 @@ The Binomial distribution is a simple extension of the Bernoulli. However, inste
 >
 > Try to construct a stochastic node whose values are binomially distributed. Remember that the binomial distribution requires two parameters, so start by creating those as constant nodes. If you need some guidance, you can consult the built-in RevBayes help by typing ? and then the name of the function you're interested in.
 > 
-> `# Write Rev code to create a random variable called R, assign it a binomial distribution, and draw 10 values from it.`
+> `# Write Rev code to create a random variable called R and assign it a binomial distribution with a specific p and n.`
 
 ### Clamped Stochastic Nodes
 

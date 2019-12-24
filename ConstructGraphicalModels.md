@@ -19,7 +19,7 @@ x <- 2.3
 
 ### Deterministic Nodes
 
-The next type of node is a deterministic node. The values of deterministic nodes do depend on the values of other nodes, but in a completely deterministic fashion. For instance, a simple deterministic node, y, could always have a value that is twice that of x.
+The next type of node is a deterministic node. The values of deterministic nodes do depend on the values of other nodes, but in a completely deterministic fashion. For instance, a simple deterministic node, _y_, could always have a value that is twice that of _x_.
 
 ```
 # Printing the starting value of x
@@ -35,7 +35,7 @@ x <- 4.7
 print("y = " + y)
 ```
 
-Notice how the value of y changes as x changes, without having to make a new assignment to y.
+Notice how the value of _y_ changes as _x_ changes, without having to make a new assignment to _y_.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/DeterministicNode.jpg"/>

@@ -1,11 +1,19 @@
 # Introduction to Graphical Models
 
+## Graphical Model Node Types
+
+By Jeremy Brown
+
+### Constant Nodes
+
 The first, and simplest, type of node in a graphical model is a constant node. These behave essentially just like standard variables in any programming language, and take fixed values. This is also the only type of node that does not depend on the value of any other node in the graph (it is independent of all other nodes).
 
 ```
 # x is a constant node with a fixed value
 x <- 2.3
 ```
+
+### Deterministic Nodes
 
 The next type of node is a deterministic node. The values of deterministic nodes do depend on the values of other nodes, but in a completely deterministic fashion. For instance, a simple deterministic node, y, could always have a value that is twice that of x.
 
@@ -32,6 +40,8 @@ m <- 2
 n := k^m
 print("n = " + n)
 ```
+
+### Stochastic Nodes
 
 The third, and final, type of node in a graphical model is a stochastic node. These nodes represent random variables, whose distribution must be specified when the node is created. The parameters of the stochastic node's distribution can either be fixed or can be determined by other variables (nodes) in the model.
 
@@ -61,6 +71,8 @@ for (i in 1:10){
 >
 > `# YOUR CODE HERE`
 
+### Clamped Stochastic Nodes
+
 In order to be able to learn about the unknown values of parameters in our models, we must have a way to include observed data. In the context of graphical models, this is known as clamping. More specifically, we can clamp observations to stochastic nodes (think of the data as the observed values of a set of random variables).
 
 ```
@@ -68,6 +80,8 @@ In order to be able to learn about the unknown values of parameters in our model
 z.clamp(1)
 print("Clamped value of z is " + z + ".")
 ```
+
+## Building Graphical Models
 
 Now that we've got our four basic building blocks in place (constant, deterministic, stochastic, and clamped stochastic nodes), we can begin building more interesting models.
 
@@ -102,6 +116,8 @@ Also note that you can print out the likelihood (i.e., the probability density o
 p.probability()
 p.lnProbability()
 ```
+
+## Performing Bayesian Inference
 
 Once we've specified our model and the dependencies among all its parameters, we need to set up the machinery to perform Markov chain Monte Carlo (MCMC) sampling from the posterior distribution. The first thing we do is to create a single model object that contains our entire graphical model. The one argument we pass to the model constructor can be any of the variables we've included in our model. Notice that we use the `=` assignment operator for the model, because it is a workspace variable and not a part of the graphical model itself (i.e., it is not any of the four types of nodes we discussed previously).
 

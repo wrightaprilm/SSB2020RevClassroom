@@ -80,6 +80,12 @@ print("z = " + z)
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/StochasticNode.jpg"/>
 </p>
 
+If you forget what parameters (arguments) are required by any RevBayes distribution, you can call the built-in help by preceding the distribution name with _?_. For instance, to call the help for the Bernoulli distribution, we would use
+
+```
+? dnBernoulli
+```
+
 Note that each time you assign a distribution to a stochastic node, it draws a new value of the random variable.
 
 ```
@@ -105,20 +111,20 @@ The Binomial distribution is a simple extension of the Bernoulli. However, inste
 
 > _Practice Exercise_
 >
-> Try construct a stochastic node whose values are binomially distributed. Remember that the binomial distribution requires two parameters. If you need some help, you can consult the list of RevBayes commands and distributions.
+> Try to construct a stochastic node whose values are binomially distributed. Remember that the binomial distribution requires two parameters, so start by creating those as constant nodes. If you need some guidance, you can consult the built-in RevBayes help by typing ? and then the name of the function you're interested in.
 > 
-> `# Write Rev code to define a binomial distribution and draw 10 values from it.`
->
-> `# YOUR CODE HERE`
+> `# Write Rev code to create a random variable called R, assign it a binomial distribution, and draw 10 values from it.`
+
 
 ### Clamped Stochastic Nodes
 
-In order to be able to learn about the unknown values of parameters in our models, we must have a way to include observed data. In the context of graphical models, this is known as clamping. More specifically, we can clamp observations to stochastic nodes (think of the data as the observed values of a set of random variables).
+In order to be able to learn about the unknown values of parameters in our models, we must have a way to include observed data. In the context of graphical models, this is known as clamping. More specifically, we can clamp observations to stochastic nodes (think of the data as the observed values of a random variable or set of random variables).
 
 ```
-# Here's a simple example of clamping an observation (success) to a Bernoulli r.v.
-z.clamp(1)
-print("Clamped value of z is " + z + ".")
+# Here's a simple example of clamping an observation (# of successes) to a Binomial r.v.
+# This should work if you've defined R properly in the exercise above.
+R.clamp(4)
+print("Clamped value of R is " + R + ".")
 ```
 
 ## Building Graphical Models

@@ -180,13 +180,15 @@ b[6].probability()
 
 > _Practice Exercise_
 >
-> Use the skills we practiced above to construct a model of Normal distribution, which has two parameters: mean and sd (standard deviation).
+> Use the skills we practiced above to construct a model of Normal distribution, which has two parameters: mean and sd (standard deviation). You can use the image below for guidance.
 > 
 > (1) Start by drawing n values from a Normal distribution with a particular mean and sd using: rnorm(n,mean,sd) and saving them in a variable called data.
 >
 > (2) Now, create a set of Normal distributions with shared, but unknown, mean and sd. For now, use a uniform distribution - dnUnif(min,max) - to specify your prior distributions for the mean and standard deviation. Be sure to create each Normal distribution and clamp a value using a for loop (plate).
 >
-> (3) Print out the current values for mean and sd. What are they? Now, print out their probability densities for your Normal distributions. Do these make sense given the data?
+> (3) Print out the current values for mean and sd. What are they? Now, print out the likelihoods for each of the n Normal distributions. Do these likelihoods make sense given the clamped values, and the current mean and sd? (HINT: values further from the mean should have lower likelihood, especially if the standard deviation is small.)
+
+NORMAL MODEL IMAGE
 
 ## Performing Bayesian Inference
 

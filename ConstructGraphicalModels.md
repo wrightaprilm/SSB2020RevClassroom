@@ -76,6 +76,10 @@ z ~ dnBernoulli(p)
 print("z = " + z)
 ```
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/StochasticNode.jpg"/>
+</p>
+
 Note that each time you assign a distribution to a stochastic node, it draws a new value of the random variable.
 
 ```

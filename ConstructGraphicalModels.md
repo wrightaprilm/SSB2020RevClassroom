@@ -127,6 +127,11 @@ R.clamp(4)
 print("Clamped value of R is " + R + ".")
 ```
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/ClampedStochasticNode.jpg"/>
+</p>
+
+
 ## Building Graphical Models
 
 Now that we've got our four basic building blocks in place (constant, deterministic, stochastic, and clamped stochastic nodes), we can begin building more interesting models.

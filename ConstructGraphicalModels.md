@@ -53,7 +53,7 @@ print("n = " + n)
 
 ---
 
-### _ASIDE: Bernoulli Distribution_
+### _PROBABILITY: Bernoulli Distribution_
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/penny.png"/>
@@ -97,7 +97,7 @@ for (i in 1:10){
 
 ---
 
-### _ASIDE: Binomial Distribution_
+### _PROBABILITY: Binomial Distribution_
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/penny.png"/>
@@ -156,11 +156,22 @@ R.lnProbability()
 
 ### Plates
 
-DESCRIPTION OF PLATES HERE
+Plates are constructs that are used to represent repition in a graphical model. Graphically, they are represented by dashed boxes around nodes (usually clamped stochastic nodes). In the Rev language, plate repitition is usually accomplished with a _for_ loop. Within such _for_ loops, we typically need to first specify the type of stochastic node (e.g., Binomial) and then clamp an observation to each node individually.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/plates.jpg"/>
 </p>
+
+As above, you can look at the likelihoods for each of these clamped nodes
+
+```
+b[1].probability()
+b[2].probability()
+b[3].probability()
+b[4].probability()
+b[5].probability()
+b[6].probability()
+```
 
 > _Practice Exercise_
 >

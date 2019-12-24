@@ -1,8 +1,8 @@
 # Introduction to Graphical Models
 
-## Graphical Model Node Types
-
 By Jeremy Brown
+
+## Graphical Model Node Types
 
 ### Constant Nodes
 

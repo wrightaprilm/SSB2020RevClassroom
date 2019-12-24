@@ -35,7 +35,13 @@ x <- 4.7
 print("y = " + y)
 ```
 
-Notice how the value of y changes as x changes, without having to make a new assignment to y. More complicated deterministic relationships could depend on the values of two or more other nodes.
+Notice how the value of y changes as x changes, without having to make a new assignment to y.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/DeterministicNode.jpg"/>
+</p>
+
+More complicated deterministic relationships could depend on the values of two or more other nodes.
 
 ```
 # A more complicated deterministic relationship

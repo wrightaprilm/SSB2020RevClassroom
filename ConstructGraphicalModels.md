@@ -57,7 +57,7 @@ print("n = " + n)
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/penny.png"/>
 </p>
-> Perhaps the simplest of all probability distributions is the Bernoulli. The Bernoulli distribution only has two discrete outcomes, 0 and 1. The probability of drawing a 1 (often called a "success") is _p_, and the probability of drawing a 0 is therefore 1-_p_. If we define a Bernoulli-distributed random variable, _X_, we would say that _P_(_X_=1)=_p_ and _P_(_X_=0)=1-_p_.
+Perhaps the simplest of all probability distributions is the Bernoulli. The Bernoulli distribution only has two discrete outcomes, 0 and 1. The probability of drawing a 1 (often called a "success") is _p_, and the probability of drawing a 0 is therefore 1-_p_. If we define a Bernoulli-distributed random variable, _X_, we would say that _P_(_X_=1)=_p_ and _P_(_X_=0)=1-_p_.
 
 ---
 

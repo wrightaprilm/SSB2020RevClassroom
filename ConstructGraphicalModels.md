@@ -127,7 +127,7 @@ print("Clamped value of R is " + R + ".")
 ```
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/ClampedStochasticNode.jpg"/>
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/ClampedStochasticNode.jpg"/>
 </p>
 
 
@@ -147,7 +147,7 @@ R ~ dnBinomial(n,p)
 R.clamp(4)
 ```
 
-Also note that you can print out the likelihood (i.e., the probability density of the current parameter value) for a given value of a model parameter, conditioned on the current states of other model parameters.
+Also note that you can print out the likelihood (i.e., the probability density of the current parameter value) of a clamped stochastic variable.
 
 ```
 R.probability()
@@ -156,7 +156,11 @@ R.lnProbability()
 
 ### Plates
 
-<DESCRIPTION OF PLATES HERE>
+DESCRIPTION OF PLATES HERE
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/plates.jpg"/>
+</p>
 
 > _Practice Exercise_
 >

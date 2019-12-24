@@ -147,6 +147,11 @@ R ~ dnBinomial(n,p)
 R.clamp(4)
 ```
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/BinomialModel.jpg"/>
+</p>
+
+
 Also note that you can print out the likelihood (i.e., the probability density of the current parameter value) of a clamped stochastic variable.
 
 ```

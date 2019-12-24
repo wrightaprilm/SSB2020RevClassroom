@@ -13,7 +13,9 @@ The first, and simplest, type of node in a graphical model is a constant node. T
 x <- 2.3
 ```
 
-<div style="text-align:center"><img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/ConstantNode.jpg" /></div>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/ConstantNode.jpg"/>
+</p>
 
 ### Deterministic Nodes
 

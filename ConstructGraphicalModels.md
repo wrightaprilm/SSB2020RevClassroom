@@ -111,9 +111,13 @@ The Binomial distribution is a simple extension of the Bernoulli. However, inste
 
 > _Practice Exercise_
 >
-> Try to construct a stochastic node whose values are binomially distributed. Remember that the binomial distribution requires two parameters, so start by creating those as constant nodes. If you need some guidance, you can consult the built-in RevBayes help by typing ? and then the name of the function you're interested in.
+> Try to construct a stochastic node whose values are Binomially distributed. Remember that the Binomial distribution requires two parameters, so start by creating those as constant nodes. If you need some guidance, you can consult the built-in RevBayes help by typing ? and then the name of the function you're interested in.
 > 
-> `# Write Rev code to create a random variable called R and assign it a binomial distribution with a specific p and n.`
+> (1) Write Rev code to create a random variable called R and assign it a Binomial distribution with a specific p and n.
+> 
+> (2) Print out the value of R. Now, reassign the Binomial several times to R and print out the value each time. Does it change? How much?
+>
+> (3) Now change the value of p and reassign the Binomial several times again, printing out the value each time. How different are these values than with the original value of p?
 
 ### Clamped Stochastic Nodes
 
@@ -182,9 +186,9 @@ b[6].probability()
 >
 > Use the skills we practiced above to construct a model of Normal distribution, which has two parameters: mean and sd (standard deviation). You can use the image below for guidance.
 > 
-> (1) Start by drawing n values from a Normal distribution with a particular mean and sd using: rnorm(n,mean,sd) and saving them in a variable called data.
+> (1) Start by drawing n values from a Normal distribution with a particular mean and sd using: rnorm(n,mean,sd) and saving them in a variable called `data`.
 >
-> (2) Now, create a set of Normal distributions with shared, but unknown, mean and sd. For now, use a uniform distribution - dnUnif(min,max) - to specify your prior distributions for the mean and standard deviation. Be sure to create each Normal distribution and clamp a value using a for loop (plate).
+> (2) Now, create a set of Normally distributed random variables with shared, but unknown, mean and sd. For now, use a uniform distribution - dnUnif(min,max) - to specify your prior distributions for the mean and standard deviation. Be sure to create each Normal distribution and clamp a value using a for loop (plate).
 >
 > (3) Print out the current values for mean and sd. What are they? Now, print out the likelihoods for each of the n Normal distributions. Do these likelihoods make sense given the clamped values, and the current mean and sd? (HINT: values further from the mean should have lower likelihood, especially if the standard deviation is small.)
 

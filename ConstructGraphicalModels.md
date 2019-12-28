@@ -2,7 +2,7 @@
 
 Jeremy Brown
 
-## Graphical Model Node Types
+## Graphical Model Fundamentals
 
 ### Constant Nodes
 
@@ -134,10 +134,27 @@ print("Clamped value of R is " + R + ".")
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/ClampedStochasticNode.jpg"/>
 </p>
 
+### Indicating Dependencies
+
+We've already implicitly relied on dependencies when constructing all of our node types, other than constant nodes. In each of the other cases, the value of the node we were creating depended on some other value. To indicate these _conditional dependencies_ in a graphical model, we use arrows. For instance, let's say that we wanted to create a deterministic node whose value depended on a random variable (stochastic node). This model might look like this
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/Dependency.jpg"/>
+</p>
+
+In this case, we actually have two dependencies. Our Bernoulli distribution depends on the fixed probability of success that we indicate with the constant node, _p_, and the deterministic node, _s_, is always 3 times larger than the stochastic value of _z_. This model would be created in the Rev language like this
+
+```
+p <- 0.5
+z ~ dnBernoulli(p)
+s := z*3 
+```
+
+All the nodes in a particular graphical model must be connected by dependencies. 
 
 ## Building Graphical Models
 
-Now that we've got our four basic building blocks in place (constant, deterministic, stochastic, and clamped stochastic nodes), we can begin building more interesting models.
+Now that we've got our basic building blocks in place (constant, deterministic, stochastic, and clamped stochastic nodes, and dependencies between them), we can begin building interesting models that allow us to learn from data.
 
 If we've clamped data to a stochastic node with a Binomial distribution, we can learn something about the probability of success, _p_, that produced those outcomes. However, in this case, we don't want to specify the exact value of _p_ as a constant node - if we did, there would be nothing to learn! Instead, we'll assign a prior probability distribution to _p_, which in this case will be a Beta(1,1).
 

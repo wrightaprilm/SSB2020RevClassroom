@@ -142,15 +142,7 @@ We've already implicitly relied on dependencies when constructing all of our nod
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/Dependency.jpg"/>
 </p>
 
-In this case, we actually have two dependencies. Our Bernoulli distribution depends on the fixed probability of success that we indicate with the constant node, _p_, and the deterministic node, _s_, is always 3 times larger than the stochastic value of _z_. This model would be created in the Rev language like this
-
-```
-p <- 0.5
-z ~ dnBernoulli(p)
-s := z*3 
-```
-
-All the nodes in a particular graphical model must be connected by dependencies. 
+In this case, we actually have two dependencies. Our Bernoulli distribution depends on the fixed probability of success that we indicate with the constant node, _p_, and the deterministic node, _s_, is always 3 times larger than the stochastic value of _z_. All the nodes in a particular graphical model must be connected by dependencies. 
 
 ## Building Graphical Models
 

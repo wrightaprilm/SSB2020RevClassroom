@@ -1,0 +1,16 @@
+----
+output: html_document
+
+----
+
+# SSB2020RevClassroom
+Materials for Hands-On Learning with RevBayes workshop at SSB2020
+
+| Time Slot | Topic | Speaker |
+|----------|--------|---------|
+| 9:00 - 9:45 | [Intro to RB](https://wrightaprilm.github.io/SSB2020RevClassroom/IntroductionToRB.html#/) | Wright |
+| 9:45 - 10:15 | Construct a Model | Brown | 
+| 10:15 - 10:30 | Coffee | No one! |
+| 10:30 - 11:15 | Choose your own graphical model adventure | I Forgot |
+| 11:15 - 11:45 | RevBayes plugins for the classroom | Wright | 
+| 11:45 - end | Open Forum | Both |

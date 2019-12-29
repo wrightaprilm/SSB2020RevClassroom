@@ -103,7 +103,7 @@ A **not so** simple case
 - This is where graphical models come in
 - A graphical model represents the joint probability distribution as a graph
 - **Nodes** are variables. **Edges** represent dependencies between nodes.
-![Image Title](img/tikz/Normal.tex.png)
+![Image Title](images/tikz/Normal.tex.png)
 
 A **not so** simple case
 ----
@@ -111,13 +111,13 @@ A **not so** simple case
 - This is where graphical models come in
 - A graphical model represents the joint probability distribution as a graph
 - **Nodes** are variables. **Edges** represent dependencies between nodes.
-![Image Title](img/tikz/Normal.tex.png)
+![Image Title](images/tikz/Normal.tex.png)
 
 Pr( data | model )
 
 A **not so** simple case
 ----
-![Image Title](img/tikz/graphical_model_legend.png)
+![Image Title](images/tikz/graphical_model_legend.png)
 
 
 Phylogenetical Complexity
@@ -125,32 +125,32 @@ Phylogenetical Complexity
 - This is where graphical models come in
 - A graphical model represents the joint probability distribution as a graph
 - **Nodes** are variables. **Edges** represent dependencies between nodes.
-![Image Title](img/tikz/Mk_model.png)
+![Image Title](images/tikz/Mk_model.png)
 
 Phylogenetical complexity
 ----
-![Image Title](img/tikz/constant_nodes.png)
-
-Phylogenetical complexity
-----
-
-![Image Title](img/tikz/stoch_nodes.png)
+![Image Title](images/tikz/constant_nodes.png)
 
 Phylogenetical complexity
 ----
 
-![Image Title](img/tikz/deterministic_node.tex.png)
+![Image Title](images/tikz/stoch_nodes.png)
 
 Phylogenetical complexity
 ----
 
-![Image Title](img/tikz/observed_node.tex.png)
+![Image Title](images/tikz/deterministic_node.tex.png)
+
+Phylogenetical complexity
+----
+
+![Image Title](images/tikz/observed_node.tex.png)
 
 
 Phylogenetical complexity
 ----
 
-![Image Title](img/tikz/gtrg_graphical_model.png)
+![Image Title](images/tikz/gtrg_graphical_model.png)
 
 Who cares about graphical modeling?
 ----
@@ -168,7 +168,7 @@ Engaging with underlying assumptions
 Engaging with underlying assumptions
 ----
  
-![](img/journal.pone.0109210.g003.png)
+![](images/journal.pone.0109210.g003.png)
  
 
 Engaging with underlying assumptions
@@ -189,19 +189,19 @@ ggplot(dat, aes(x=draws)) + geom_density() + geom_vline(data = d2, aes(xintercep
 
 Engaging with underlying assumptions
 ----
-![Yang1994](img/lnl.png)
+![Yang1994](images/lnl.png)
 
 Yang (1994) demonstrated that modeling ASRV as Gamma distributed with 4 Gamma categories is sufficient
 
 Engaging with underlying assumptions
 ----
-![Yang1994](img/Gamma.png)
+![Yang1994](images/Gamma.png)
 
 Implies many low- or zero-rate characters
 
 Engaging with underlying assumptions
 ----
-![Ants5](img/Fig5.png)
+![Ants5](images/Fig5.png)
 
 - We typically don't collect invarient characters!  
 - Wagner (2009) and Harisson and Larson (2016) have argued that the Gamma is not appropriate for ASRV in morphological data, and we should use a lognormal
@@ -302,13 +302,13 @@ It wouldn't be unfair to say there are some things about RevBayes that are more 
 Transparency and documentation
 ----
 
-![tutorials](img/RB_tutorial.png)
+![tutorials](images/RB_tutorial.png)
 
 
 Transparency and documentation
 ----
 
-![tutorials](img/RB_tutorial.png)
+![tutorials](images/RB_tutorial.png)
 
 Each one is available as a markdown file on the [website repository](https://github.com/revbayes/revbayes.github.io)
 

@@ -136,7 +136,7 @@ print("Clamped value of R is " + R + ".")
 
 ### Indicating Dependencies
 
-We've already implicitly relied on dependencies when constructing all of our node types, other than constant nodes. In each of the other cases, the value of the node we were creating depended on some other value. To indicate these _conditional dependencies_ in a graphical model, we use arrows. For instance, let's say that we wanted to create a deterministic node whose value depended on a random variable (stochastic node). This model might look like this
+We've already implicitly relied on dependencies when constructing all of our node types, other than constant nodes. In each of the other cases, the value of the node we were creating depended on some other value. To indicate these dependencies in a graphical model, we use arrows. For instance, let's say that we wanted to create a deterministic node whose value depended on a random variable (stochastic node). We would draw an arrow from the stochastic node to the value of the deterministic node. The direction of the arrow indicates the nature of the dependency.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/Dependency.jpg"/>

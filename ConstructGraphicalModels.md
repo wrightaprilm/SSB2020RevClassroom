@@ -111,17 +111,17 @@ The Binomial distribution is a simple extension of the Bernoulli. However, inste
 
 > _Practice Exercise_
 >
-> Try to construct a stochastic node whose values are Binomially distributed. Remember that the Binomial distribution requires two parameters, so start by creating those as constant nodes. If you need some guidance, you can consult the built-in RevBayes help by typing ? and then the name of the function you're interested in.
+> Try to construct a stochastic node whose values are Binomially distributed with 6 trials (_n_=6). Remember that the Binomial distribution requires two parameters, so start by creating those as constant nodes. If you need some guidance, you can consult the built-in RevBayes help by typing ? and then the name of the function you're interested in.
 > 
 > (1) Write Rev code to create a random variable called R and assign it a Binomial distribution with a specific p and n.
 > 
-> (2) Print out the value of R. Now, reassign the Binomial several times to R and print out the value each time. Does it change? How much?
+> (2) Print out the value of R. Now, reassign the Binomial several times to R and print out the value each time. Does it stay the same?
 >
 > (3) Now change the value of p and reassign the Binomial several times again, printing out the value each time. How different are these values than with the original value of p?
 
 ### Clamped Stochastic Nodes
 
-In order to be able to learn about the unknown values of parameters in our models, we must have a way to include observed data. In the context of graphical models, this is known as clamping. More specifically, we can clamp observations to stochastic nodes (think of the data as the observed values of a random variable or set of random variables).
+In order to be able to learn about the unknown values of parameters in our models, we must have a way to include observed data. In the context of graphical models, this is known as clamping. More specifically, we clamp data to stochastic nodes (think of the data as the observed values of a random variable or set of random variables represented by those nodes). For instance, let's say we've flipped a coin 6 times and observed 4 heads. If we define a Binomial random variable with _n_=6, we can then clamp our observed number of "successes" (_k_=4).
 
 ```
 # Here's a simple example of clamping an observation (# of successes) to a Binomial r.v.
@@ -174,7 +174,7 @@ R.lnProbability()
 
 ### Plates
 
-Plates are constructs that are used to represent repition in a graphical model. Graphically, they are represented by dashed boxes around nodes (usually clamped stochastic nodes). In the Rev language, plate repitition is usually accomplished with a _for_ loop. Within such _for_ loops, we typically need to first specify the type of stochastic node (e.g., Binomial) and then clamp an observation to each node individually.
+Plates are constructs that are used to represent repition in a graphical model. Graphically, they are represented by dashed boxes around nodes (usually clamped stochastic nodes). In the Rev language, plate repitition is usually accomplished with a _for_ loop. Within such _for_ loops, we typically need to first specify the type of stochastic node (e.g., Binomial) and then clamp an observation to each node individually. For instance, instead of a single Binomial outcome (say, flipping one coin 6 times), let's say we flipped 5 coins each 6 times and we think they have the same probability of success. We can set up 5 Binomial random variables and clamp the observed number of successes to each of them.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/plates.jpg"/>
@@ -188,7 +188,6 @@ b[2].probability()
 b[3].probability()
 b[4].probability()
 b[5].probability()
-b[6].probability()
 ```
 
 > _Practice Exercise_

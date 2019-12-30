@@ -1,0 +1,42 @@
+# Simulating an "observed" dataset
+n <- 50
+data <- rnorm(n,10,1)
+
+# Setting parameters for uniform priors
+mu_min <- 0
+mu_max <- 50
+
+sig_min <- 0
+sig_max <- 4
+
+# Creating model parameters
+mu ~ dnUnif( lower=mu_min , upper=mu_max )
+sig ~ dnUnif( lower=sig_min , upper=sig_max )
+
+# Creating stochastic nodes (Normal distributions) clamped with data
+for (i in 1:n){
+	R[i] ~ dnNormal( mean=mu , sd=sig )
+	R[i].clamp(data[i])
+}
+
+# For this example, we'll use the Normal model you just set up in the last practice exercise
+# Since mu is one node in our graph, we can pass it as an argument to the model constructor
+myModel = model(mu)
+
+# Setting up MCMC moves
+moves = VectorMoves()
+moves.append( mvSlide(mu,delta=0.1,weight=1) )
+moves.append( mvSlide(sig,delta=0.1,weight=1) )
+# If there were other parameters to infer, we could add additional moves here.
+
+# Setting up MCMC monitors
+monitors = VectorMonitors()
+monitors.append( mnScreen(printgen=100,mu,sig) ) # This monitor prints to the screen
+monitors.append( mnModel(filename="NormalModel_MCMC.log",printgen=100,stochasticOnly=TRUE) ) # To file
+
+# Creating an MCMC object to perform inference
+myMCMC = mcmc(myModel, moves, monitors)
+
+# Run the MCMC for 
+ngens <- 50000
+myMCMC.run(ngens)

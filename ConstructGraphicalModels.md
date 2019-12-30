@@ -72,8 +72,8 @@ The third, and final, type of node in a graphical model is a stochastic node. Th
 p <- 0.5
 
 # Creating a new stochastic node to represent the outcome of a Bernoulli trial
-z ~ dnBernoulli(p)
-print("z = " + z)
+Z ~ dnBernoulli(p)
+print("Z = " + Z)
 ```
 
 <p align="center">
@@ -90,8 +90,8 @@ Note that each time you assign a distribution to a stochastic node, it draws a n
 
 ```
 for (i in 1:10){
-    z ~ dnBernoulli(p)
-    print("z = " + z)
+    Z ~ dnBernoulli(p)
+    print("Z = " + Z)
 }
 ```
 
@@ -105,7 +105,7 @@ for (i in 1:10){
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/penny.png"/>
 </p>
 
-The Binomial distribution is a simple extension of the Bernoulli. However, instead of thinking about a single trial with probability of success _p_, we will now think about _n_ trials and we will keep track of the number of successes, _k_. Therefore, while the Bernoulli distribution only had one parameter, _p_, the Binomial distribution has two: _n_ and _p_.
+The Binomial distribution is a simple extension of the Bernoulli. However, instead of thinking about a single trial with probability of success _p_, we will now think about _n_ trials and we will keep track of the number of successes, _k_. Therefore, while the Bernoulli distribution only had one parameter, _p_, the Binomial distribution has two: _n_ and _p_. And while the outcome of the Bernoulli was a single 1 (success) or 0 (failure), a Binomial random variable can take any integer value between 0 and _n_.
 
 ---
 
@@ -142,7 +142,7 @@ We've already implicitly relied on dependencies when constructing all of our nod
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/Dependency.jpg"/>
 </p>
 
-In this case, we actually have two dependencies. Our Bernoulli distribution depends on the fixed probability of success that we indicate with the constant node, _p_, and the deterministic node, _s_, is always 3 times larger than the stochastic value of _z_. All the nodes in a particular graphical model must be connected by dependencies. 
+In this case, we actually have two dependencies. Our Bernoulli distribution depends on the fixed probability of success that we indicate with the constant node, _p_, and the deterministic node, _S_, is always 3 times larger than the stochastic value of _Z_. All the nodes in a particular graphical model must be connected by dependencies. 
 
 ## Building Graphical Models
 
@@ -165,7 +165,7 @@ R.clamp(4)
 </p>
 
 
-Also note that you can print out the likelihood (i.e., the probability density of the current parameter value) of a clamped stochastic variable.
+Also note that you can print out the likelihood (i.e., the probability of the data given the current model parameter values) of a clamped stochastic variable.
 
 ```
 R.probability()
@@ -183,18 +183,18 @@ Plates are constructs that are used to represent repition in a graphical model. 
 As above, you can look at the likelihoods for each of these clamped nodes
 
 ```
-b[1].probability()
-b[2].probability()
-b[3].probability()
-b[4].probability()
-b[5].probability()
+B[1].probability()
+B[2].probability()
+B[3].probability()
+B[4].probability()
+B[5].probability()
 ```
 
 > _Practice Exercise_
 >
 > Use the skills we practiced above to construct a model of Normal distribution, which has two parameters: mean and sd (standard deviation). You can use the image below for guidance.
 > 
-> (1) Start by drawing n values from a Normal distribution with a particular mean and sd using: rnorm(n,mean,sd) and saving them in a variable called `data`.
+> (1) Start by drawing n values from a Normal distribution with a known mean and sd using: rnorm(n,mean,sd) and saving them in a variable called `data`. These are your simulated "observations".
 >
 > (2) Now, create a set of Normally distributed random variables with shared, but unknown, mean and sd. For now, use a uniform distribution - dnUnif(min,max) - to specify your prior distributions for the mean and standard deviation. Be sure to create each Normal distribution and clamp a value using a for loop (plate).
 >

@@ -172,6 +172,8 @@ R.probability()
 R.lnProbability()
 ```
 
+While we've now constructed our first complete Bayesian graphical model, we've only been able to clamp a single number to a single node to indicate our observed data. However, in many situations, we want to include a series of observations. To do this, we need one more graphical model tool known as a plate.
+
 ### Plates
 
 Plates are constructs that are used to represent repition in a graphical model. Graphically, they are represented by dashed boxes around nodes (usually clamped stochastic nodes). In the Rev language, plate repitition is usually accomplished with a _for_ loop. Within such _for_ loops, we typically need to first specify the type of stochastic node (e.g., Binomial) and then clamp an observation to each node individually. For instance, instead of a single Binomial outcome (say, flipping one coin 6 times), let's say we flipped 5 coins each 6 times and we think they have the same probability of success. We can set up 5 Binomial random variables and clamp the observed number of successes to each of them.
@@ -206,30 +208,31 @@ B[5].probability()
 
 ## Performing Bayesian Inference
 
-Once we've specified our model and the dependencies among all its parameters, we need to set up the machinery to perform Markov chain Monte Carlo (MCMC) sampling from the posterior distribution. The first thing we do is to create a single model object that contains our entire graphical model. The one argument we pass to the model constructor can be any of the variables we've included in our model. Notice that we use the `=` assignment operator for the model, because it is a workspace variable and not a part of the graphical model itself (i.e., it is not any of the four types of nodes we discussed previously).
+Once we've specified a model and the dependencies among all its parameters, we need to set up the machinery to perform Markov chain Monte Carlo (MCMC) sampling from the posterior distribution. The first thing we do is to create a single model object that contains our entire graphical model. The one argument we pass to the model constructor can be any of the variables we've included in our model. Notice that we use the `=` assignment operator for the model, because it is a workspace variable and not a part of the graphical model itself (i.e., it is not any of the four types of nodes we discussed previously).
 
 ```
-# For this example, we'll use the Binomial model we just set up
-# Since alpha is one node in our graph, we can pass it as an argument to the model constructor
-myModel = model(alpha)
+# For this example, we'll use the Normal model you just set up in the last practice exercise
+# Since mu is one node in our graph, we can pass it as an argument to the model constructor
+myModel = model(mu)
 ```
 
-Now that we've set up our model, we need to assign Metropolis-Hastings moves (i.e., proposal distributions) to some of the variables so that we can sample from the posterior distribution. For the sake of convenience, we often create a vector called moves to store a list of all the moves applied to various parameters of our model.
+Now that we've set up our model, we need to assign Metropolis-Hastings moves (i.e., proposal distributions) to the variables whose values we want to infer so that we can sample from the posterior distribution. For the sake of convenience, we often create a vector called moves to store a list of all the moves applied to various parameters of our model.
 
 ```
-moves[1] = mvSlide(p,delta=0.1,weight=1)
+moves = VectorMoves()
+moves.append( mvSlide(mu,delta=0.1,weight=1) )
+moves.append( mvSlide(sig,delta=0.1,weight=1) )
 
 # If there were other parameters to infer, we could add additional moves here.
 ```
 
-We need to also set up monitors to allow us to keep track of the progress of the MCMC. We can print out our progress to the screen at an interval of our choosing using printgen, and we can also have parameter values, posteriors, likelihoods, and priors written to a file.
+We need to also set up monitors to allow us to keep track of the progress of the MCMC. We can print out our progress to the screen at an interval of our choosing using _printgen_, and we can also have parameter values, posteriors, likelihoods, and priors written to a file.
 
 ```
-# This monitor prints to the screen
-monitors[1] = mnScreen(printgen=100,p)
-
-# We can also add a monitor that prints to file
-# monitors[2] = mnModel(filename="binomialMCMC.log",printgen=1000)
+# Setting up MCMC monitors
+monitors = VectorMonitors()
+monitors.append( mnScreen(printgen=100,mu,sig) ) # This monitor prints to the screen
+monitors.append( mnModel(filename="NormalModel_MCMC.log",printgen=100,stochasticOnly=TRUE) ) # To file
 ```
 
 Now we can take our model object, our moves, and our monitors and combine them into an MCMC object.
@@ -238,4 +241,7 @@ Now we can take our model object, our moves, and our monitors and combine them i
 
 Now that we've put all these pieces together, we can simply tell RevBayes to run our MCMC analysis and for how long! It takes care of all the propose/accept/reject cycles for us.
 
-`myMCMC.run(10000)`
+```
+ngens <- 50000
+myMCMC.run(ngens)
+```

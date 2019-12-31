@@ -9,3 +9,5 @@
 [HKY MCMC analysis file](https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/HKY_MCMC.rev)
 
 [JC MCMC analysis file](https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/JC_MCMC.rev)
+
+[FigTree Software (for visualizing trees)](https://github.com/rambaut/figtree/releases)

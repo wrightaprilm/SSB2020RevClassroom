@@ -1,0 +1,88 @@
+# MCMC analysis with a JC model
+# Sebastian Hoehna, Michael Landis, Tracy A. Heath, and Jeremy M. Brown
+
+# Read in the data
+data = readDiscreteCharacterData("./primates_and_galeopterus_cytb.nex")
+
+# Important data summaries
+num_taxa <- data.ntaxa()
+num_branches <- 2 * num_taxa - 3
+taxa <- data.taxa()
+
+# Preparing vectors for moves and monitors
+moves    = VectorMoves()
+monitors = VectorMonitors()
+
+
+# ----> Substitution Model <----
+
+# Create a constant node for the rate matrix, JC
+Q := fnJC(4)
+
+
+# ----> Tree model <----
+
+# Topology prior
+out_group = clade("Galeopterus_variegatus")
+topology ~ dnUniformTopology(taxa, outgroup=out_group)
+moves.append( mvNNI(topology, weight=num_taxa/2.0) )
+moves.append( mvSPR(topology, weight=num_taxa/10.0) )
+
+# Tree-length prior
+alpha <- 2
+beta <- 4
+TL ~ dnGamma(alpha,beta)
+moves.append( mvSlide(TL, weight=1.0) )
+moves.append( mvScale(TL, weight=1.0) )
+
+# Relative branch-length prior
+alpha_bl <- 1.0
+rel_branch_lengths ~ dnDirichlet(rep(alpha_bl,num_branches))
+moves.append( mvBetaSimplex(rel_branch_lengths, weight=3.0) )
+moves.append( mvDirichletSimplex(rel_branch_lengths, weight=1.5) )
+
+# Transformation to absolute branch lengths
+br_lens := rel_branch_lengths * TL
+
+# Assembling topology and branch lengths
+psi := treeAssembly(topology, br_lens)
+
+
+
+# ----> Assembling the phylogenetic continuous-time Markov chain (PhyloCTMC) <----
+
+# Create the stochastic CTMC node
+seq ~ dnPhyloCTMC(tree=psi, Q=Q, type="DNA")
+
+# Attach the data
+seq.clamp(data)
+
+
+# ----> Setting up monitors <----
+
+# Create model object
+mymodel = model(psi)
+
+# Add monitors
+monitors.append( mnScreen(TL, printgen=100) )
+monitors.append( mnFile(psi, filename="./primates_cytb_JC.trees", printgen=10) )
+monitors.append( mnModel(filename="./primates_cytb_JC.log", printgen=10) )
+
+
+# ----> Running the MCMC and summarizing output <----
+
+# Run the analysis
+mymcmc = mcmc(mymodel, moves, monitors)
+mymcmc.run(generations=10000)
+
+
+# Summarize the sampled tree topologies
+treetrace = readTreeTrace("./primates_cytb_JC.trees", treetype="non-clock")
+
+# Find the MAP (most probable) tree
+map_tree = mapTree(treetrace,"./primates_cytb_JC_MAP.tre")
+
+
+# ----> Quitting RevBayes <----
+
+q()

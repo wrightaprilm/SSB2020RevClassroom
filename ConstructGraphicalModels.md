@@ -1,4 +1,4 @@
-# Introduction to Graphical Models
+# Constructing Graphical Models
 
 Jeremy Brown
 
@@ -176,7 +176,7 @@ While we've now constructed our first complete Bayesian graphical model, we've o
 
 ### Plates
 
-Plates are constructs that are used to represent repition in a graphical model. Graphically, they are represented by dashed boxes around nodes (usually clamped stochastic nodes). In the Rev language, plate repitition is usually accomplished with a _for_ loop. Within such _for_ loops, we typically need to first specify the type of stochastic node (e.g., Binomial) and then clamp an observation to each node individually. For instance, instead of a single Binomial outcome (say, flipping one coin 6 times), let's say we flipped 5 coins each 6 times and we think they have the same probability of success. We can set up 5 Binomial random variables and clamp the observed number of successes to each of them.
+Plates are constructs that are used to represent repetition in a graphical model. Graphically, they are represented by dashed boxes around nodes (usually clamped stochastic nodes). In the Rev language, plate repetition is usually accomplished with a _for_ loop. Within such _for_ loops, we typically need to first specify the type of stochastic node (e.g., Binomial) and then clamp an observation to each node individually. For instance, instead of a single Binomial outcome (say, flipping one coin 6 times), let's say we flipped 5 coins each 6 times and we think they have the same probability of success. We can set up 5 Binomial random variables and clamp the observed number of successes to each of them.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/plates.jpg"/>
@@ -198,7 +198,7 @@ B[5].probability()
 > 
 > (1) Start by drawing n values from a Normal distribution with a known mean and sd using: rnorm(n,mean,sd) and saving them in a variable called `data`. These are your simulated "observations".
 >
-> (2) Now, create a set of Normally distributed random variables with shared, but unknown, mean and sd. For now, use a uniform distribution - dnUnif(min,max) - to specify your prior distributions for the mean and standard deviation. Be sure to create each Normal distribution and clamp a value using a for loop (plate).
+> (2) Now, create a set of Normally distributed random variables with shared, but unknown, mean and sd. Use the name `mu` for the node specifying the mean and `sig` for the node specifying the standard deviation. For now, use a uniform distribution - dnUnif(min,max) - to specify your prior distributions for the mean and standard deviation. Be sure to create each Normal distribution and clamp a value using a for loop (plate).
 >
 > (3) Print out the current values for mean and sd. What are they? Now, print out the likelihoods for each of the n Normal distributions. Do these likelihoods make sense given the clamped values, and the current mean and sd? (HINT: values further from the mean should have lower likelihood, especially if the standard deviation is small.)
 
@@ -219,6 +219,7 @@ myModel = model(mu)
 Now that we've set up our model, we need to assign Metropolis-Hastings moves (i.e., proposal distributions) to the variables whose values we want to infer so that we can sample from the posterior distribution. For the sake of convenience, we often create a vector called moves to store a list of all the moves applied to various parameters of our model.
 
 ```
+# Setting up MCMC moves
 moves = VectorMoves()
 moves.append( mvSlide(mu,delta=0.1,weight=1) )
 moves.append( mvSlide(sig,delta=0.1,weight=1) )
@@ -245,3 +246,13 @@ Now that we've put all these pieces together, we can simply tell RevBayes to run
 ngens <- 50000
 myMCMC.run(ngens)
 ```
+
+> _Practice Exercise_
+>
+> (1) Set up an MCMC analysis for your Normal model. Remember, you'll need to (1) simulate your data, (2) set up the graphical model (as covered in the previous practice exercise), then (3) set up your MCMC analysis. We recommend putting all these commands together in a text file that you name with a `.rev` extension.
+>
+> (2) You can then call all the commands in this file from within RevBayes using the `source()` command [e.g., `source("./myNormalAnalysis.rev")`]. Go ahead and run your MCMC analysis.
+> 
+> (3) Examine the MCMC output in the log file (NormalModel_MCMC.log), either by eye or using your favorite program (e.g., Tracer). Paying specific attention to the values near the end of the analysis, does the chain sample values that are similar to the mean and sd you used in your simulation? How big is your dataset?
+>
+> If you have trouble setting up your analysis, you can compare to the analysis file [we created by clicking here](https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/NormalModel_MCMC.rev).

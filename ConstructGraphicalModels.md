@@ -176,7 +176,7 @@ While we've now constructed our first complete Bayesian graphical model, we've o
 
 ### Plates
 
-Plates are constructs that are used to represent repition in a graphical model. Graphically, they are represented by dashed boxes around nodes (usually clamped stochastic nodes). In the Rev language, plate repitition is usually accomplished with a _for_ loop. Within such _for_ loops, we typically need to first specify the type of stochastic node (e.g., Binomial) and then clamp an observation to each node individually. For instance, instead of a single Binomial outcome (say, flipping one coin 6 times), let's say we flipped 5 coins each 6 times and we think they have the same probability of success. We can set up 5 Binomial random variables and clamp the observed number of successes to each of them.
+Plates are constructs that are used to represent repetition in a graphical model. Graphically, they are represented by dashed boxes around nodes (usually clamped stochastic nodes). In the Rev language, plate repetition is usually accomplished with a _for_ loop. Within such _for_ loops, we typically need to first specify the type of stochastic node (e.g., Binomial) and then clamp an observation to each node individually. For instance, instead of a single Binomial outcome (say, flipping one coin 6 times), let's say we flipped 5 coins each 6 times and we think they have the same probability of success. We can set up 5 Binomial random variables and clamp the observed number of successes to each of them.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/wrightaprilm/SSB2020RevClassroom/master/images/plates.jpg"/>

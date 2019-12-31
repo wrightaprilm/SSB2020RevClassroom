@@ -1,2 +1,3 @@
 # Comparing Phylogenetic Models
-## (aka Choose Your Own Model Adventure!)
+
+[Overview of phylogenetic graphical models] (https://github.com/wrightaprilm/SSB2020RevClassroom/raw/master/PhylogeneticGraphicalModels.pdf)

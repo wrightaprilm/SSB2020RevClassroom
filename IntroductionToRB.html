@@ -517,117 +517,266 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="overview" class="slide level2">
 <h2>Overview</h2>
 <ul>
-<li>Introduction to graphical modeling</li>
-<li>How graphical modeling makes phylogenetic estimation more flexible</li>
-<li>Using RevBayes in the classroom</li>
+<li class="fragment">Introduction to Coding to Learn</li>
+<li class="fragment">Introduction to graphical modeling</li>
+<li class="fragment">How graphical modeling makes phylogenetic estimation more flexible</li>
+<li class="fragment">Using RevBayes in the classroom</li>
+</ul>
+</section>
+<section id="learning-to-code" class="slide level2">
+<h2>Learning to Code</h2>
+<p>We’re all familiar with the idea of learning to code</p>
+</section>
+<section id="learning-to-code-1" class="slide level2">
+<h2>Learning to Code</h2>
+<p>We’re all familiar with the idea of learning to code</p>
+<ul>
+<li>Maybe students in your degree program take an upper-division course where codin is the aim</li>
+</ul>
+</section>
+<section id="learning-to-code-2" class="slide level2">
+<h2>Learning to Code</h2>
+<p>We’re all familiar with the idea of learning to code</p>
+<ul>
+<li>Maybe students in your degree program take an upper-division course where codin is the aim</li>
+<li>This is the “learn to code” framework. Being able to produce code is the end goal</li>
+</ul>
+</section>
+<section id="learning-to-code-3" class="slide level2">
+<h2>Learning to Code</h2>
+<p>There are some unsatisfying things about this model</p>
+</section>
+<section id="learning-to-code-4" class="slide level2">
+<h2>Learning to Code</h2>
+<p>There are some unsatisfying things about this model</p>
+<ul>
+<li>If we confine coding to niche classes, we’re likely to miss much of the population</li>
+<li>Large proportion of students who seek out computational training have seen computation in high school</li>
+</ul>
+</section>
+<section id="learning-to-code-5" class="slide level2">
+<h2>Learning to Code</h2>
+<p>There are some unsatisfying things about this model</p>
+<ul>
+<li>If we confine coding to niche classes, we’re likely to miss much of the population</li>
+<li>Large proportion of students who seek out computational training have seen computation in high school</li>
+</ul>
+<p>== Confining learning to people who are already convinced of the utility</p>
+</section>
+<section id="learning-to-code-6" class="slide level2">
+<h2>Learning to Code</h2>
+<p>There are some unsatisfying things about this model</p>
+<ul>
+<li>If we confine coding to niche classes, we’re likely to miss much of the population</li>
+<li>Large proportion of students who seek out computational training have seen computation in high school</li>
+</ul>
+<p>== Students get coding either late in undergrad, or after they’ve been mucking around unproductively with data</p>
+</section>
+<section id="code-to-learn" class="slide level2">
+<h2>Code to Learn</h2>
+<p>Coding doesn’t have to be the main focus of what you’re doing.</p>
+</section>
+<section id="code-to-learn-1" class="slide level2">
+<h2>Code to Learn</h2>
+<p>Coding doesn’t have to be the main focus of what you’re doing</p>
+<ul>
+<li><strong>Code to learn:</strong> work with data computationally to develop biological insight</li>
+</ul>
+</section>
+<section id="code-to-learn-2" class="slide level2">
+<h2>Code to Learn</h2>
+<p>Coding doesn’t have to be the main focus of what you’re doing</p>
+<ul>
+<li><strong>Code to learn:</strong> work with data computationally to develop biological insight</li>
+</ul>
+<ul>
+<li>Example: Rather than talking about Bergmann’s Rule, have students download occurrence data from GBIF and key it to a trait database to observe body size along longitudinal gradients</li>
+</ul>
+</section>
+<section id="code-to-learn-3" class="slide level2">
+<h2>Code to Learn</h2>
+<p>Coding doesn’t have to be the main focus of what you’re doing</p>
+<ul>
+<li>Systematics is a field ripe with opportunities</li>
+<li>To understand systematics, you need to know some</li>
+</ul>
+<blockquote>
+<ul>
+<li>Biology</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Statistics</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Math</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Geology &amp; Earth history</li>
+</ul>
+</blockquote>
+</section>
+<section id="code-to-learn-4" class="slide level2">
+<h2>Code to Learn</h2>
+<p>Coding doesn’t have to be the main focus of what you’re doing</p>
+<ul>
+<li>Systematics is a field ripe with opportunities</li>
+<li>In performing systematics research, we learn about</li>
+</ul>
+<blockquote>
+<ul>
+<li>Biology</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Statistics</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Math</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>Geology &amp; Earth history</li>
+</ul>
+</blockquote>
+</section>
+<section id="revbayes" class="slide level2">
+<h2>RevBayes</h2>
+<p>RevBayes is a Bayesian modeling software underlain by a graphical model framework</p>
+</section>
+<section id="revbayes-1" class="slide level2">
+<h2>RevBayes</h2>
+<p>RevBayes is a Bayesian modeling software underlain by a graphical model framework</p>
+<ul>
+<li>RevBayes implements an R-like statistical modeling language called <code>Rev</code></li>
+</ul>
+</section>
+<section id="revbayes-2" class="slide level2">
+<h2>RevBayes</h2>
+<p>RevBayes is a Bayesian modeling software underlain by a graphical model framework</p>
+<ul>
+<li>RevBayes implements an R-like statistical modeling language called <code>Rev</code></li>
+<li>The design of the language is meant to give users control over the details of their analysis</li>
 </ul>
 </section>
 <section id="the-graphical-modeling-framework" class="slide level2">
 <h2>The Graphical Modeling Framework</h2>
 <ul>
-<li>What is a model?</li>
+<li class="fragment">What is a model?</li>
 </ul>
 </section>
 <section id="the-graphical-modeling-framework-1" class="slide level2">
 <h2>The Graphical Modeling Framework</h2>
 <ul>
-<li>What is a model?
+<li class="fragment">What is a model?
 <ul>
-<li>A model uses mathematics to describe a process, or the behavior of a system</li>
-<li>Important facets of the generating process of the data are written down as parameters</li>
+<li class="fragment">A model uses mathematics to describe a process, or the behavior of a system</li>
+<li class="fragment">Important facets of the generating process of the data are written down as parameters</li>
 </ul></li>
 </ul>
 </section>
 <section id="the-graphical-modeling-framework-2" class="slide level2">
 <h2>The Graphical Modeling Framework</h2>
 <ul>
-<li>What is a model?
+<li class="fragment">What is a model?
 <ul>
-<li>A model uses mathematics to describe a process, or the behavior of a system</li>
-<li>Important facets of the generating process of the data are written down as parameters</li>
+<li class="fragment">A model uses mathematics to describe a process, or the behavior of a system</li>
+<li class="fragment">Important facets of the generating process of the data are written down as parameters</li>
 </ul></li>
-<li>A graphical model represents the relationships and dependencies between model paramters</li>
+<li class="fragment">A graphical model represents the relationships and dependencies between model paramters</li>
 </ul>
 </section>
 <section id="a-simple-case" class="slide level2">
 <h2>A simple case</h2>
 <ul>
-<li>An archer: Let’s say the archer is a pretty good archer</li>
+<li class="fragment">An archer: Let’s say the archer is a pretty good archer</li>
 </ul>
+</section>
+<section id="a-simple-case-1" class="slide level2">
+<h2>A simple case</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">good_shots &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span> <span class="dv">100</span>, <span class="dt">mean=</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">1</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">hist</span>(good_shots, <span class="dt">main=</span><span class="st">&quot;Archer arrow shots&quot;</span>,  <span class="dt">xlab =</span> <span class="st">&quot;Inches from bullseye&quot;</span>)</a></code></pre></div>
 <p><img src="IntroductionToRB_files/figure-revealjs/unnamed-chunk-1-1.png" width="576" /></p>
 </section>
-<section id="a-simple-case-1" class="slide level2">
-<h2>A simple case</h2>
-<ul>
-<li>An archer: Let’s say the archer is a pretty bad archer</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">bad_shots &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span> <span class="dv">100</span>, <span class="dt">mean=</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">hist</span>(bad_shots, <span class="dt">main=</span><span class="st">&quot;Archer arrow shots&quot;</span>,  <span class="dt">xlab =</span> <span class="st">&quot;Inches from bullseye&quot;</span>)</a></code></pre></div>
-<p><img src="IntroductionToRB_files/figure-revealjs/unnamed-chunk-2-1.png" width="576" /></p>
-</section>
 <section id="a-simple-case-2" class="slide level2">
 <h2>A simple case</h2>
 <ul>
-<li>It’s easy to describe a model where we are manipulating one parameter</li>
-<li>But we rarely have such a simple case when we’re analysing biological data</li>
+<li class="fragment">An archer: Let’s say the archer is a pretty bad archer</li>
 </ul>
+</section>
+<section id="a-simple-case-3" class="slide level2">
+<h2>A simple case</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">bad_shots &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dt">n=</span> <span class="dv">100</span>, <span class="dt">mean=</span> <span class="dv">0</span>, <span class="dt">sd =</span> <span class="dv">5</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">hist</span>(bad_shots, <span class="dt">main=</span><span class="st">&quot;Archer arrow shots&quot;</span>,  <span class="dt">xlab =</span> <span class="st">&quot;Inches from bullseye&quot;</span>)</a></code></pre></div>
+<p><img src="IntroductionToRB_files/figure-revealjs/unnamed-chunk-2-1.png" width="576" /></p>
 </section>
 <section id="a-not-so-simple-case" class="slide level2">
 <h2>A <strong>not so</strong> simple case</h2>
 <ul>
 <li>It’s easy to describe a model where we are manipulating one parameter</li>
-<li>But we rarely have such a simple case when we’re analysing biological data</li>
-<li>We’re describing the mechanisms that generated our observed data
+</ul>
 <ul>
-<li>In the case of a tree, this is the process of molecular or morphological evolution</li>
-</ul></li>
+<li>But we rarely have such a simple case when we’re analysing biological data</li>
+</ul>
+<ul>
+<li>We’re describing the mechanisms that generated our observed data</li>
+</ul>
+<ul>
+<li class="fragment">In the case of a tree, this is the process of molecular or morphological evolution</li>
 </ul>
 </section>
 <section id="a-not-so-simple-case-1" class="slide level2">
 <h2>A <strong>not so</strong> simple case</h2>
 <ul>
-<li>This is where graphical models come in</li>
+<li class="fragment">This is where graphical models come in</li>
 </ul>
 </section>
 <section id="a-not-so-simple-case-2" class="slide level2">
 <h2>A <strong>not so</strong> simple case</h2>
 <ul>
-<li>This is where graphical models come in</li>
-<li>A <strong>graphical model</strong> represents the joint probability distribution as a graph</li>
+<li class="fragment">This is where graphical models come in</li>
+<li class="fragment">A <strong>graphical model</strong> represents the joint probability distribution as a graph</li>
 </ul>
 </section>
 <section id="a-not-so-simple-case-3" class="slide level2">
 <h2>A <strong>not so</strong> simple case</h2>
 <ul>
-<li>This is where graphical models come in</li>
-<li>A graphical model represents the joint probability distribution as a graph</li>
-<li><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes.</li>
+<li class="fragment">This is where graphical models come in</li>
+<li class="fragment">A graphical model represents the joint probability distribution as a graph</li>
+<li class="fragment"><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes.</li>
 </ul>
 </section>
 <section id="a-not-so-simple-case-4" class="slide level2">
 <h2>A <strong>not so</strong> simple case</h2>
 <ul>
-<li>This is where graphical models come in</li>
-<li>A graphical model represents the joint probability distribution as a graph</li>
-<li><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes.</li>
+<li class="fragment">This is where graphical models come in</li>
+<li class="fragment">A graphical model represents the joint probability distribution as a graph</li>
+<li class="fragment"><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes.</li>
 </ul>
 </section>
 <section id="a-not-so-simple-case-5" class="slide level2">
 <h2>A <strong>not so</strong> simple case</h2>
 <ul>
-<li>This is where graphical models come in</li>
-<li>A graphical model represents the joint probability distribution as a graph</li>
-<li><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes. <img data-src="images/tikz/Normal.tex.png" alt="Image Title" /></li>
+<li class="fragment">This is where graphical models come in</li>
+<li class="fragment">A graphical model represents the joint probability distribution as a graph</li>
+<li class="fragment"><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes. <img data-src="images/tikz/Normal.tex.png" alt="Image Title" /></li>
 </ul>
 </section>
 <section id="a-not-so-simple-case-6" class="slide level2">
 <h2>A <strong>not so</strong> simple case</h2>
 <ul>
-<li>This is where graphical models come in</li>
-<li>A graphical model represents the joint probability distribution as a graph</li>
-<li><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes. <img data-src="images/tikz/Normal.tex.png" alt="Image Title" /></li>
+<li class="fragment">This is where graphical models come in</li>
+<li class="fragment">A graphical model represents the joint probability distribution as a graph</li>
+<li class="fragment"><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes. <img data-src="images/tikz/Normal.tex.png" alt="Image Title" /></li>
 </ul>
 <p>Pr( data | model )</p>
 </section>
@@ -638,9 +787,9 @@ document.getElementsByTagName('head')[0].appendChild(style);
 <section id="phylogenetical-complexity" class="slide level2">
 <h2>Phylogenetical Complexity</h2>
 <ul>
-<li>This is where graphical models come in</li>
-<li>A graphical model represents the joint probability distribution as a graph</li>
-<li><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes. <img data-src="images/tikz/Mk_model.png" alt="Image Title" /></li>
+<li class="fragment">This is where graphical models come in</li>
+<li class="fragment">A graphical model represents the joint probability distribution as a graph</li>
+<li class="fragment"><strong>Nodes</strong> are variables. <strong>Edges</strong> represent dependencies between nodes. <img data-src="images/tikz/Mk_model.png" alt="Image Title" /></li>
 </ul>
 </section>
 <section id="phylogenetical-complexity-1" class="slide level2">
@@ -665,137 +814,16 @@ document.getElementsByTagName('head')[0].appendChild(style);
 </section>
 <section id="who-cares-about-graphical-modeling" class="slide level2">
 <h2>Who cares about graphical modeling?</h2>
-<p>I’m going to make the case that this framework enables radical transparency in both research and pedagogy.</p>
-</section>
-<section id="engaging-with-underlying-assumptions" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<ul>
-<li>Most phylogenetic estimations treat among-site rate variation as Gamma-distributed</li>
-<li>Not every site in a nucleotide alignment evolves at the same rate</li>
-<li>Not every character in a morphological dataset evolves at the same rate</li>
-</ul>
-</section>
-<section id="engaging-with-underlying-assumptions-1" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<p><img data-src="images/journal.pone.0109210.g003.png" /></p>
-</section>
-<section id="engaging-with-underlying-assumptions-2" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a></code></pre></div>
-<pre><code>## 
-## Attaching package: &#39;dplyr&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:stats&#39;:
-## 
-##     filter, lag</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     intersect, setdiff, setequal, union</code></pre>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">draws =</span> <span class="kw">c</span>(<span class="kw">rgamma</span>(<span class="dt">n =</span> <span class="dv">500</span>, <span class="dt">shape =</span> <span class="fl">.1</span>, <span class="dt">scale =</span> <span class="dv">10</span>),<span class="kw">rgamma</span>(<span class="dt">n =</span> <span class="dv">500</span>, <span class="dt">shape =</span> <span class="fl">.5</span>, <span class="dt">scale =</span> <span class="dv">10</span>)))</a>
-<a class="sourceLine" id="cb7-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">d2 &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">lower =</span> <span class="kw">quantile</span>(dat<span class="op">$</span>draws, <span class="dt">probs =</span> <span class="fl">.25</span>), <span class="dt">middle =</span> <span class="kw">quantile</span>(dat<span class="op">$</span>draws, <span class="dt">probs =</span> <span class="fl">.5</span>), <span class="dt">seventyfive =</span> <span class="kw">quantile</span>(dat<span class="op">$</span>draws, <span class="dt">probs =</span> <span class="fl">.75</span>), <span class="dt">upper =</span> <span class="kw">quantile</span>(dat<span class="op">$</span>draws, <span class="dt">probs =</span> <span class="fl">.99</span>))</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="kw">ggplot</span>(dat, <span class="kw">aes</span>(<span class="dt">x=</span>draws)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_vline</span>(<span class="dt">data =</span> d2, <span class="kw">aes</span>(<span class="dt">xintercept =</span> lower)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_vline</span>(<span class="dt">data =</span> d2, <span class="kw">aes</span>(<span class="dt">xintercept =</span> middle)) <span class="op">+</span><span class="kw">geom_vline</span>(<span class="dt">data =</span> d2, <span class="kw">aes</span>(<span class="dt">xintercept =</span> seventyfive)) <span class="op">+</span><span class="kw">geom_vline</span>(<span class="dt">data =</span> d2, <span class="kw">aes</span>(<span class="dt">xintercept =</span> upper)) </a></code></pre></div>
-<p><img src="IntroductionToRB_files/figure-revealjs/unnamed-chunk-3-1.png" width="576" /></p>
-</section>
-<section id="engaging-with-underlying-assumptions-3" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<p><img data-src="images/lnl.png" alt="Yang1994" /></p>
-<p>Yang (1994) demonstrated that modeling ASRV as Gamma distributed with 4 Gamma categories is sufficient</p>
-</section>
-<section id="engaging-with-underlying-assumptions-4" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<p><img data-src="images/Gamma.png" alt="Yang1994" /></p>
-<p>Implies many low- or zero-rate characters</p>
-</section>
-<section id="engaging-with-underlying-assumptions-5" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<p><img data-src="images/Fig5.png" alt="Ants5" /></p>
-<ul>
-<li>We typically don’t collect invarient characters!<br />
-</li>
-<li>Wagner (2009) and Harisson and Larson (2016) have argued that the Gamma is not appropriate for ASRV in morphological data, and we should use a lognormal</li>
-</ul>
-</section>
-<section id="engaging-with-underlying-assumptions-6" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb8-2" data-line-number="2"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb8-3" data-line-number="3">dat &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">draws =</span> <span class="kw">c</span>(<span class="kw">rlnorm</span>(<span class="dt">n =</span> <span class="dv">100</span>, <span class="dt">mean=</span><span class="dv">1</span>)))</a>
-<a class="sourceLine" id="cb8-4" data-line-number="4"></a>
-<a class="sourceLine" id="cb8-5" data-line-number="5">d2 &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">lower =</span> <span class="kw">quantile</span>(dat<span class="op">$</span>draws, <span class="dt">probs =</span> <span class="fl">.25</span>), <span class="dt">middle =</span> <span class="kw">quantile</span>(dat<span class="op">$</span>draws, <span class="dt">probs =</span> <span class="fl">.5</span>), <span class="dt">seventyfive =</span> <span class="kw">quantile</span>(dat<span class="op">$</span>draws, <span class="dt">probs =</span> <span class="fl">.75</span>), <span class="dt">upper =</span> <span class="kw">quantile</span>(dat<span class="op">$</span>draws, <span class="dt">probs =</span> <span class="fl">.99</span>))</a>
-<a class="sourceLine" id="cb8-6" data-line-number="6"></a>
-<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="kw">ggplot</span>(dat, <span class="kw">aes</span>(<span class="dt">x=</span>draws)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_density</span>() <span class="op">+</span><span class="st"> </span><span class="kw">geom_vline</span>(<span class="dt">data =</span> d2, <span class="kw">aes</span>(<span class="dt">xintercept =</span> lower)) <span class="op">+</span><span class="st"> </span><span class="kw">geom_vline</span>(<span class="dt">data =</span> d2, <span class="kw">aes</span>(<span class="dt">xintercept =</span> middle)) <span class="op">+</span><span class="kw">geom_vline</span>(<span class="dt">data =</span> d2, <span class="kw">aes</span>(<span class="dt">xintercept =</span> seventyfive)) <span class="op">+</span><span class="kw">geom_vline</span>(<span class="dt">data =</span> d2, <span class="kw">aes</span>(<span class="dt">xintercept =</span> upper)) </a></code></pre></div>
-<p><img src="IntroductionToRB_files/figure-revealjs/unnamed-chunk-4-1.png" width="576" /></p>
-</section>
-<section id="engaging-with-underlying-assumptions-7" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
 <ul>
 <li>In previous iterations of software, you might have to email a developer and ask them to implement something</li>
-<li>RevBayes’ graphical model framework emphasizes flexibility. We can simply plug in another ASRV distribution.</li>
 </ul>
-</section>
-<section id="engaging-with-underlying-assumptions-8" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<p>Open RB_Discrete_Morphology_Model_test.md</p>
-</section>
-<section id="engaging-with-underlying-assumptions-9" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<p>RevBayes can’t be run from within RStudio. In our console, type:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">library</span>(knitr)</a>
-<a class="sourceLine" id="cb9-2" data-line-number="2"><span class="kw">purl</span>(<span class="st">&quot;RB_MCMC_Discrete_Morph.Rmd&quot;</span>)</a></code></pre></div>
-<p>This will generate a RB_MCMC_Discrete_Morph.R file with our Rev code.</p>
-</section>
-<section id="engaging-with-underlying-assumptions-10" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<p>Move the RB_MCMC_Discrete_Morph.R file to scripts, and execute like so:</p>
-<pre><code>rb scripts/RB_MCMC_Discrete_Morph.R</code></pre>
-<p>This will take about 7 minutes.</p>
-</section>
-<section id="engaging-with-underlying-assumptions-11" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-<p>Return to RB_MCMC_Discrete_Morph.md and scroll to Lognormally-distributed among-character rate variation.</p>
-<p>Follow the instructions in the file.</p>
-</section>
-<section id="engaging-with-underlying-assumptions-12" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-</section>
-<section id="engaging-with-underlying-assumptions-13" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
-</section>
-<section id="engaging-with-underlying-assumptions-14" class="slide level2">
-<h2>Engaging with underlying assumptions</h2>
 <ul>
-<li>Maybe there is an effect here</li>
-<li>Dan will show us some better ways of looking at posterior samples</li>
-<li>But, the larger point is that <em>flexibility enabled by modularity means that we were able to immediately implement a model we were interested in</em></li>
+<li class="fragment">RevBayes’ graphical model framework emphasizes flexibility</li>
 </ul>
 </section>
-<section id="transparency-and-documentation" class="slide level2">
-<h2>Transparency and documentation</h2>
-<p>It wouldn’t be unfair to say there are some things about RevBayes that are more complex than other phylogenetic softwares</p>
-</section>
-<section id="transparency-and-documentation-1" class="slide level2">
-<h2>Transparency and documentation</h2>
-<p><img data-src="images/RB_tutorial.png" alt="tutorials" /></p>
-</section>
-<section id="transparency-and-documentation-2" class="slide level2">
-<h2>Transparency and documentation</h2>
-<p><img data-src="images/RB_tutorial.png" alt="tutorials" /></p>
-<p>Each one is available as a markdown file on the <a href="https://github.com/revbayes/revbayes.github.io">website repository</a></p>
-</section>
-<section id="transparency-and-documentation-3" class="slide level2">
-<h2>Transparency and documentation</h2>
-<p>You see an analysis you like? Clone it!</p>
-</section>
-<section id="transparency-and-documentation-4" class="slide level2">
-<h2>Transparency and documentation</h2>
-<p>Integrate with various other R packages, like Bookdown, to generate a flexible living textbook for your systematics class!</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">bookdown<span class="op">::</span><span class="kw">render_book</span>(<span class="st">&quot;RB_MCMC_Discrete_Morph.Rmd&quot;</span>, <span class="st">&quot;bookdown::gitbook&quot;</span>)</a></code></pre></div>
-</section>
-<section id="transparency-and-documentation-5" class="slide level2">
-<h2>Transparency and documentation</h2>
-<p>We also have the RevKernel, and a set of RevNotebooks ready to go for the Pythonistas.</p>
+<section id="who-cares-about-graphical-modeling-1" class="slide level2">
+<h2>Who cares about graphical modeling?</h2>
+<p>Over the next two hours, we’re going to make the case that this framework enables flexible, code-to-learn classrooms</p>
 </section>
     </div>
   </div>

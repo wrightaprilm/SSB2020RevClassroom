@@ -1,10 +1,13 @@
 ----
 output: html_document
-
 ----
 
 # SSB2020RevClassroom
 Materials for Hands-On Learning with RevBayes workshop at SSB2020
+
+# Preparation
+
+Please install [RevBayes](https://revbayes.github.io/download)
 
 | Time Slot | Topic | Speaker |
 |----------|--------|---------|

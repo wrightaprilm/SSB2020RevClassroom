@@ -77,6 +77,13 @@ RStudio
 
 ```{r, eval=FALSE}
 
-devtools::install("revbayes/RevKnitr")
+devtools::install("revbayes/RevKnitr@final_rb")
 ```
 
+
+RStudio
+--------
+
+Sample class here:
+
+https://wrightaprilm.github.io/Systematics2020/index.html

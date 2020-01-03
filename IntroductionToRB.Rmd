@@ -98,6 +98,11 @@ Coding doesn't have to be the main focus of what you're doing
 
 > - Example: Rather than talking about Bergmann's Rule, have students download occurrence data from GBIF and key it to a trait database to observe body size along longitudinal gradients
 
+Code to Learn
+------
+
+Citations for many of the things in the previous couple slides can be found in [this](https://f1000research.com/articles/8-1854/v1#) manuscript
+
 
 Code to Learn
 -----
